@@ -1,0 +1,77 @@
+@import "mixins";
+@import "variables";
+
+* {
+    @include reset;
+}
+
+body {
+    @include flex;
+    height: 100vh;
+    background-color: #604CBB;
+form {
+    position: relative;
+    display: inline-block;
+    
+
+    .search-bar {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        @include flex;
+        background-color: #fff;
+        top :5px;
+        border-radius: 50%;
+        margin : 0 7px;
+        cursor: pointer;
+
+        &.active {
+        background-color: #604CBB;
+        }
+
+        i{
+            color: #604CBB;
+            &.active {
+            color: #fff;
+            }
+        }
+    }
+
+    .times {
+        position: absolute;
+        cursor: pointer;
+        left: 0;
+        height: 10px;
+        width: 10px;
+        @include flex;
+        top :20px;
+        border-radius: 50%;
+        margin : 0 15px;
+        opacity:0;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55 );
+
+        &.active{
+            opacity:1;
+            color: lightgray;
+        }
+    }
+
+    input {
+        height: 50px;
+        width: 0;
+        border-radius: 50px;
+        border: none;
+        outline: 0;
+        text-indent: 30px;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55 );
+        opacity: 0;
+
+        &.active {
+            width: 300px;
+            opacity: 1;
+        }
+        
+    }
+}
+}
